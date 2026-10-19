@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành - Sử dụng màu sắc trong trang web</title>
+    <style>
+        /* =========================================================
+           BẢNG MÀU ĐƠN TÔNG (MONOCHROMATIC PALETTE BASED ON #00ADEE)
+           - Bậc 1 (Màu chính): #00ADEE
+           - Bậc 2:             #00B2EF
+           - Bậc 4 (Màu nền):   #00BFF2
+           - Bậc 7 (Nội dung):  #8DD7F7
+           - Bậc 9 (Footer):    #C6E9FA
+           ========================================================= */
+
+        :root {
+            --color-level-1: #00ADEE; /* Màu chính logo / Badge ON SALE */
+            --color-level-2: #00B2EF; /* Badge PREVIEW */
+            --color-level-4: #00BFF2; /* Màu nền chính */
+            --color-level-7: #8DD7F7; /* Màu nền phần nội dung */
+            --color-level-9: #C6E9FA; /* Màu nền footer */
+            --text-color: #000000;    /* Màu chữ chính: Đen */
+            --text-white: #ffffff;    /* Màu chữ trắng cho điểm nhấn */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text-color);
+            /* Bước 2: Màu nền chuyển thành màu bậc 4 (#00BFF2) */
+            background-color: var(--color-level-4);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--color-level-1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--color-level-1);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--color-level-1);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-level-1);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            padding: 40px 30px;
+            /* Bước 4: Đổi màu nền phần nội dung thành màu bậc 7 (#8DD7F7) */
+            background-color: var(--color-level-7);
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Bước 3: Thay đổi màu nền phần ON SALE / PREVIEW */
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--text-white);
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-sale {
+            /* Tông màu bậc 1 (#00ADEE) */
+            background-color: var(--color-level-1);
+        }
+
+        .badge-preview {
+            /* Tông màu bậc 2 (#00B2EF) */
+            background-color: var(--color-level-2);
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            color: var(--text-color);
+            font-size: 15px;
+            max-width: 700px;
+        }
+
+        /* CONTENT GRID */
+        .content {
+            padding: 30px;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--color-level-9);
+            border: 1px solid var(--color-level-7);
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: var(--color-level-1);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: var(--color-level-2);
+        }
+
+        /* FOOTER */
+        /* Bước 5: Đổi màu nền phần footer thành màu bậc 9 (#C6E9FA) */
+        footer {
+            background-color: var(--color-level-9);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: var(--text-color);
+            border-top: 1px solid var(--color-level-7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon"></span>
+                CodeGym Store
+            </div>
+            <nav>
+                <a href="#">Trang chủ</a>
+                <a href="#">Sản phẩm</a>
+                <a href="#">Khuyến mãi</a>
+                <a href="#">Liên hệ</a>
+            </nav>
+        </header>
+
+        <!-- HERO SECTION (ON SALE / PREVIEW) -->
+        <section class="hero">
+            <div class="badges">
+                <!-- Bước 3: Màu nền ON SALE (Bậc 1) và PREVIEW (Bậc 2) -->
+                <span class="badge badge-sale">ON SALE</span>
+                <span class="badge badge-preview">PREVIEW</span>
+            </div>
+            <h1>Chương Trình Phối Màu Đơn Tông</h1>
+            <p>Trang web minh họa việc áp dụng bảng màu đơn tông (Monochromatic) từ màu gốc xanh logo (#00ADEE) đến các cấp độ nhạt hơn để tạo nên sự đồng bộ và hài hòa cho giao diện.</p>
+        </section>
+
+        <!-- CONTENT SECTION -->
+        <section class="content">
+            <!-- Bước 4: Phần nội dung có màu nền bậc 7 (#8DD7F7) / các card sử dụng bậc 9 (#C6E9FA) -->
+            <div class="card">
+                <h3>Khóa Học Lập Trình Web</h3>
+                <p>Nắm vững HTML, CSS, JavaScript và các nguyên lý phối màu cơ bản giúp xây dựng giao diện hiện đại.</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="card">
+                <h3>Thiết Kế UI/UX</h3>
+                <p>Thực hành thiết kế bảng màu đơn tông, bổ túc và tương phản cho sản phẩm phần mềm chuyên nghiệp.</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+            <div class="card">
+                <h3>Thực Hành CSS Advanced</h3>
+                <p>Tối ưu hóa các biến CSS (Custom Properties) để quản lý bộ màu dễ dàng cho toàn bộ hệ thống.</p>
+                <a href="#" class="btn">Xem chi tiết</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <!-- Bước 5: Footer màu bậc 9 (#C6E9FA) -->
+        <footer>
+            <p>&copy; 2026 CodeGym Demo - Bài thực hành Phối màu Đơn tông (Monochromatic Palette)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
