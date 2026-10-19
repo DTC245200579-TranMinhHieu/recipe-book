@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Thẻ Sản Phẩm Co Giãn Linh Hoạt</title>
+  <style>
+    /* Reset CSS cơ bản */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    /* 1. LƯỚI KHUNG CHỨA SẢN PHẨM (PRODUCT GRID) */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi thiếu chỗ */
+      gap: 20px;       /* Khoảng cách giữa các thẻ sản phẩm */
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;  /* Căn giữa khung lưới ra giữa màn hình */
+    }
+
+    /* 2. THẺ SẢN PHẨM (PRODUCT CARD) */
+    .product-card {
+      /* flex: flex-grow | flex-shrink | flex-basis */
+      /* Trừ 20px khoảng cách gap để vừa đủ 4 cột trên 1 dòng màn hình lớn */
+      flex: 1 1 calc(25% - 20px); 
+      min-width: 220px;            /* Đảm bảo thẻ không bị co quá nhỏ trên Mobile */
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Hiệu ứng di chuột vào thẻ */
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card h4 {
+      color: #1e293b;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-card .price {
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <h4>Sản phẩm 1</h4>
+      <p class="price">500.000 đ</p>
+    </div>
+    <div class="product-card">
+      <h4>Sản phẩm 2</h4>
+      <p class="price">750.000 đ</p>
+    </div>
+    <div class="product-card">
+      <h4>Sản phẩm 3</h4>
+      <p class="price">1.200.000 đ</p>
+    </div>
+    <div class="product-card">
+      <h4>Sản phẩm 4</h4>
+      <p class="price">320.000 đ</p>
+    </div>
+  </div>
+
+</body>
+</html>
